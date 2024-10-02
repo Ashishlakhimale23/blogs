@@ -2,58 +2,47 @@
 title: "Backpropagation Applied to Handwritten Zip Code Recognition"
 description: "This paper talks about applying Backpropgation to Zip Code"
 date: "2024-10-02"
-image: "https://raw.githubusercontent.com/AshishLakhimale23/blogs/main/images/lecun1989.png"
+image: "https://raw.githubusercontent.com/AshishLakhimale23/blogs/main/images/contact-form.png"
 tags: ["CNN","Backprop", "LeCun", "Neural Networks"]
 ---
 
-# Backpropagation Applied to Handwritten Zip Code Recognition
+# Redux toolkit
 
----
+why to use state management libraries ?
 
-## Introduction
+when to use state management libraries ?
 
-- The paper talks about the ability of learning networks can be greatly enhanced by providing constraints from the task domain, and those constraints can be integrated into a backpropagation network through the architecture of the network.
+how to use the state management library (redux toolkit) ?
 
----
+when to use useState and when to use useReducer
 
-## Zip Codes
+       use useState when the operations on the state  are not in multiple no
 
-- Data Base: It consists of 9298 segmented numerals digitized from handwritten zip codes.
-- 7291 digits are used for training network and 2007 are used for testing the generalization performance.
-- Preprocessing: The size of digit image varies but typically around 40 by 60 pixels, then a linear transformation is performed to make image fit in 16 x 16 pixel image.
-- The gray levels of each image are scaled and translated to fall within the range of -1 and 1
-    
-    ![Zip_code.png](https://raw.githubusercontent.com/AshishLakhimale23/blogs/main/images/Zip_Code.png)
-    
+       use useReducer when the operation on the state are in multiple no so the upadtion logic can be 
 
----
+       separated from the actual ui component to avoid the messiness of the code 
 
-## Network Architecture
+## Take aways
 
-- The network has three hidden layers H1, H2, H3 respectively.
-- H1 is composed of 12 groups and 64 units arranged as 12 independent 8 by 8 feature maps, this 12 features will be designated by H1 1, H1 2,...., H1 12.
-- Layer H1 comprises 768 units (8 by 8 times 12), 19,968 connections (768 times 26), but only 1086 parameters(786 biases plus 25 times 12 feature kernels).
-- Layer H2 composed of 12 features maps. Each feature map contains 16 units arranged in a 4 by 4 plane.
-- Layer H3 has 30 units, and is fully connected to H2. The number of connections between H2 and H3 is thus 5790 (30 times 192 plus 30 biases). The output layer has 10 units and is fully connected to H3, adding another 310 weights.
-- In summary, the network has 1256 units, 64660 connections and 9760 independent parameters.
+context is not a state management tool its a dependency injection ([https://www.reddit.com/r/reactjs/comments/mqblj2/redux_vs_usecontext_usereducer/](https://www.reddit.com/r/reactjs/comments/mqblj2/redux_vs_usecontext_usereducer/))
 
-![Neural_Network_Arch.png](https://raw.githubusercontent.com/AshishLakhimale23/blogs/main/images/Neural_Network_Architecture.png)
+In [software engineering](https://en.wikipedia.org/wiki/Software_engineering), **dependency injection** is a programming technique in which an [object](https://en.wikipedia.org/wiki/Object_(computer_science)) or [function](https://en.wikipedia.org/wiki/Subroutine) receives other objects or functions that it requires, as opposed to creating them internally. Dependency injection aims to [separate the concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) of constructing objects and using them, leading to [loosely coupled](https://en.wikipedia.org/wiki/Loose_coupling) programs.[[1]](https://en.wikipedia.org/wiki/Dependency_injection#cite_note-1)[[2]](https://en.wikipedia.org/wiki/Dependency_injection#cite_note-MarkSeeman2011P4-2)[[3]](https://en.wikipedia.org/wiki/Dependency_injection#cite_note-3) The pattern ensures that an object or function that wants to use a given [service](https://en.wikipedia.org/wiki/Service_(systems_architecture)) should not have to know how to construct those services.
 
-- The nonlinear function used at each node was scaled by hyperbolic tangent symmetric function.
-- The output cost function was the mean squared error.
+**Why React Context is Not a "State Management" Tool (and Why It Doesn't Replace Redux)**
 
----
+([https://blog.isquaredsoftware.com/2021/01/context-redux-differences/#are-context-and-redux-the-same-thing](https://blog.isquaredsoftware.com/2021/01/context-redux-differences/#are-context-and-redux-the-same-thing))
 
-## Results
+context is just a pipeline like architecture to just pass down the data not actually managing it .
 
-![image.png](https://raw.githubusercontent.com/AshishLakhimale23/blogs/main/images/Arch.png)
+# redux toolkit
 
-- The original paper produces the train error of 0.14 % and test error 5.00 %
+1. create a store using store configuration 
+2. create reducers using createslice
+- create initial state
+- add reducers
 
-The code:
+  3.  use the state using useSelector and use reducers using useDispatch
 
-https://github.com/sammmeeeer/ML-DL-Paper-Implementations/tree/main/cnn
+![contact-form .png]("https://raw.githubusercontent.com/AshishLakhimale23/blogs/main/images/contact-form.png")
 
-## Reference
-
-https://github.com/karpathy/lecun1989-repro
+[https://workze.framer.website/jobs-list](https://workze.framer.website/jobs-list)
